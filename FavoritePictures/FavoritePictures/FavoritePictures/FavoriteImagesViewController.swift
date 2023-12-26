@@ -23,7 +23,7 @@ class FavoriteImagesViewController: UIViewController {
     }
     
     private func setupTableView() {
-        tableView.register(UINib(nibName: "PictureFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "PictureFeedTableViewCell")
+        tableView.register(UINib(nibName: "FavoriteImagesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteImagesTableViewCell")
     }
 }
 
@@ -34,7 +34,7 @@ extension FavoriteImagesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PictureFeedTableViewCell", for: indexPath) as? PictureFeedTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteImagesTableViewCell", for: indexPath) as? FavoriteImagesTableViewCell else { return UITableViewCell() }
         return cell
     }
 }
