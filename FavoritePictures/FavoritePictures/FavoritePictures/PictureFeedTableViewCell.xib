@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PictureFeedTableViewCell" rowHeight="526" id="F9c-wD-e5P" customClass="PictureFeedTableViewCell" customModule="FavoritePictures" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="526"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9c-wD-e5P" id="kW6-Zb-1ss">
+                <rect key="frame" x="0.0" y="0.0" width="470" height="526"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3S-iY-Gam">
+                        <rect key="frame" x="20" y="21" width="430" height="454"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dD-uB-aSR">
+                        <rect key="frame" x="210" y="481" width="50" height="35"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system"/>
+                        <connections>
+                            <action selector="actionLikeButton:" destination="F9c-wD-e5P" eventType="touchUpInside" id="qoX-ss-Ypj"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bs8-j5-3GF">
+                        <rect key="frame" x="199.66666666666666" y="485" width="10.333333333333343" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="AccentColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="2dD-uB-aSR" firstAttribute="leading" secondItem="bs8-j5-3GF" secondAttribute="trailing" id="0Fk-m4-AoG"/>
+                    <constraint firstItem="W3S-iY-Gam" firstAttribute="top" secondItem="kW6-Zb-1ss" secondAttribute="topMargin" constant="10" id="86F-0h-hbS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="W3S-iY-Gam" secondAttribute="trailing" id="9Gv-DU-S5c"/>
+                    <constraint firstAttribute="bottom" secondItem="2dD-uB-aSR" secondAttribute="bottom" constant="10" id="Hto-hJ-WdQ"/>
+                    <constraint firstItem="2dD-uB-aSR" firstAttribute="centerX" secondItem="kW6-Zb-1ss" secondAttribute="centerX" id="Lsz-mw-TfG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="W3S-iY-Gam" secondAttribute="bottom" constant="40" id="MMB-l9-Onq"/>
+                    <constraint firstAttribute="bottom" secondItem="bs8-j5-3GF" secondAttribute="bottom" constant="10" id="QTL-SI-uoq"/>
+                    <constraint firstItem="bs8-j5-3GF" firstAttribute="top" secondItem="W3S-iY-Gam" secondAttribute="bottom" constant="10" id="bS6-ix-Hlv"/>
+                    <constraint firstItem="W3S-iY-Gam" firstAttribute="centerX" secondItem="kW6-Zb-1ss" secondAttribute="centerX" id="hY9-80-MLO"/>
+                    <constraint firstItem="W3S-iY-Gam" firstAttribute="leading" secondItem="kW6-Zb-1ss" secondAttribute="leadingMargin" id="vja-Xe-0rq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="likeButton" destination="2dD-uB-aSR" id="ERA-hL-Baf"/>
+                <outlet property="numberCellLabel" destination="bs8-j5-3GF" id="CI4-e0-Fld"/>
+                <outlet property="photoImageView" destination="W3S-iY-Gam" id="8F3-h1-71z"/>
+            </connections>
+            <point key="canvasLocation" x="1.5267175572519083" y="63.380281690140848"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
