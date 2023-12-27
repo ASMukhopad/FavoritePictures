@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     //    var model: Model? = nil
     var image = UIImage()
     var images = [UIImage]()
+//    let vm = Model.sharedInstance
     
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -27,6 +28,12 @@ class ViewController: UIViewController {
         //        urlResult()
         imageLoad()
     }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        vm.loadTasks {
+//            tableView.reloadData()
+//        }
+//    }
     
     //    func urlResult() {
     //        let urlString = "https://random.dog/woof.json"
@@ -102,8 +109,5 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
     }
 }

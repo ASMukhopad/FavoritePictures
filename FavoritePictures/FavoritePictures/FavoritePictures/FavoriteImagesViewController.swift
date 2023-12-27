@@ -22,6 +22,13 @@ class FavoriteImagesViewController: UIViewController {
         setupTableView()
     }
     
+    func getSavedImage(named: String) -> UIImage? {
+        if let dir = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) {
+            return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent(named).path)
+        }
+        return nil
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: "FavoriteImagesTableViewCell", bundle: nil), forCellReuseIdentifier: "FavoriteImagesTableViewCell")
     }
@@ -35,6 +42,9 @@ extension FavoriteImagesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteImagesTableViewCell", for: indexPath) as? FavoriteImagesTableViewCell else { return UITableViewCell() }
+        if let image = getSavedImage(named: "fileName") {
+            cell.likeImage.image = image
+        }
         return cell
     }
 }

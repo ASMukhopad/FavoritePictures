@@ -8,10 +8,5 @@
 import UIKit
 
 class FavoriteImagesTableViewCell: UITableViewCell {
-
     @IBOutlet weak var likeImage: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 }
