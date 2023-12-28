@@ -10,11 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    //    let loadDataFetcher = LoadDataFetcher()
-    //    var model: Model? = nil
     var image = UIImage()
     var images = [UIImage]()
-//    let vm = Model.sharedInstance
     
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -25,27 +22,8 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setupTableView()
-        //        urlResult()
         imageLoad()
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        vm.loadTasks {
-//            tableView.reloadData()
-//        }
-//    }
-    
-    //    func urlResult() {
-    //        let urlString = "https://random.dog/woof.json"
-    //        self.loadDataFetcher.fetcherDetails(urlString: urlString) { model in
-    //            guard let model = model else { return }
-    //            self.model = model
-    //            self.numbers.append(model.url ?? "4")
-    //            self.tableView.reloadData()
-    //            self.urlResult()
-    //            print(self.numbers)
-    //        }
-    //    }
     
     func imageLoad() {
         let api = "https://picsum.photos/200/300"
@@ -80,21 +58,6 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PictureFeedTableViewCell", for: indexPath) as? PictureFeedTableViewCell else { return UITableViewCell() }
-        
-        //                let api = "https://picsum.photos/200/300"
-        //                guard let apiUrl = URL(string: api) else {
-        //                    fatalError("какая-то ошибка")
-        //                }
-        //                let session = URLSession(configuration: .default)
-        //                let task = session.dataTask(with: apiUrl) { data, response, error in
-        //                    guard let data = data,
-        //                          error == nil else { return }
-        //                    DispatchQueue.main.async {
-        //                        cell.photoImageView.image = UIImage(data: data) ?? UIImage(named: "4")!
-        //                    }
-        //                }
-        //                task.resume()
-        
         cell.photoImageView.image = images[indexPath.row]
         cell.numberCellLabel.text = "\(indexPath.row) "
         return cell

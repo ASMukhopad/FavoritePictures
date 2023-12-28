@@ -8,7 +8,7 @@
 import UIKit
 
 class FavoriteImagesViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     public var screenWidth: CGFloat {
