@@ -10,11 +10,17 @@ import UIKit
 class PictureFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton! {
+        didSet {
+            likeButton.setImage(emptyImage, for: .normal)
+            likeButton.setImage(selectImage, for: .selected)
+        }
+    }
     @IBOutlet weak var numberCellLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     let selectImage = UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
@@ -22,6 +28,8 @@ class PictureFeedTableViewCell: UITableViewCell {
     
     @IBAction func actionLikeButton(_ sender: Any) {
         let success = saveImage(image: (photoImageView.image ?? UIImage(named:"4"))!)
+        saveImage(image: (photoImageView.image ?? UIImage(named:"4"))!)
+        likeButton.isSelected.toggle()
     }
     
     func saveImage(image: UIImage) -> Bool {
