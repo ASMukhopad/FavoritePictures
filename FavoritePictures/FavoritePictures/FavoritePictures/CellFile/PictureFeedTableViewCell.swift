@@ -16,6 +16,10 @@ class PictureFeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    let selectImage = UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(.red, renderingMode: .alwaysOriginal)
+    let emptyImage = UIImage(systemName: "hand.thumbsup")
+    
     @IBAction func actionLikeButton(_ sender: Any) {
         let success = saveImage(image: (photoImageView.image ?? UIImage(named:"4"))!)
     }
